@@ -3,11 +3,12 @@ const path = require('path');
 const pathFolder = path.join(__dirname, 'secret-folder');
 
 function writeParamsOfFile(filePath, fileExtension, fileName) {
-fs.stat(filePath, (error, stats) => {
-    if (error) console.log(error.message);
-    console.log(`${fileName} - ${fileExtension} - ${stats.size / 1000}kb`);
-    return stats.size;
-});
+    fs.stat(filePath, (error, stats) => {
+        if (error) {
+            console.log(error.message);
+        }
+        console.log(`${fileName} - ${fileExtension} - ${stats.size / 1000}kb`);
+    });
 }
 
 fs.readdir(pathFolder, { withFileTypes: true }, (error, files) => {
