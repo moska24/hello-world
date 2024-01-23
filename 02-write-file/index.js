@@ -13,7 +13,8 @@ process.stdin.on("data", function(chunk){
     outStream.write(chunk);
 });
 process.on('exit', function() {
-    stdout.write('Bye!');
+    stdout.write('Bye! \n');
+    process.exit();
 });
 process.on('SIGINT', function() {
     process.exit();
